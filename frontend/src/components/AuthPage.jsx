@@ -43,7 +43,7 @@ const AuthPage = () => {
 
   return (
     <div className="auth-layout">
-      <div className="glass-card" style={{ maxWidth: '480px', width: '100%', padding: '56px 48px' }}>
+      <div className="glass-card" style={{ maxWidth: '480px', width: '100%', padding: 'clamp(24px, 10vw, 56px)' }}>
         {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '48px' }}>
           <div style={{ 

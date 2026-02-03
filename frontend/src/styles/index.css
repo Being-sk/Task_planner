@@ -343,6 +343,27 @@ p {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Dashboard Layout */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 80px;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .sidebar {
+        position: static !important;
+        order: -1;
+        /* Move calendar/sidebar to top on mobile */
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     html {
@@ -350,7 +371,7 @@ p {
     }
 
     main {
-        padding: 40px 20px;
+        padding: 24px 20px;
     }
 
     .glass-card {
@@ -359,7 +380,7 @@ p {
     }
 
     h1 {
-        font-size: 36px;
+        font-size: 32px !important;
     }
 
     h2 {
@@ -367,11 +388,30 @@ p {
     }
 
     nav {
-        padding: 16px 20px;
+        padding: 12px 16px;
     }
 
-    body::after {
-        background-size: 40px 40px;
+    .nav-content {
+        gap: 12px !important;
+    }
+
+    .user-pill {
+        display: none !important;
+        /* Hide email on small screens to save space */
+    }
+
+    .task-actions {
+        opacity: 1 !important;
+        /* Always show actions on mobile since no hover */
+        transform: none !important;
+    }
+
+    .deep-focus-title {
+        font-size: 2.5rem !important;
+    }
+
+    .deep-focus-timer {
+        font-size: 4rem !important;
     }
 }
 
