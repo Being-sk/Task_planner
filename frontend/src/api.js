@@ -1,12 +1,7 @@
 import axios from 'axios';
 
-// Ensure the base URL ends with /api
-let base = import.meta.env.VITE_API_BASE || 'http://localhost:4000';
-if (!base.endsWith('/api')) {
-  base = `${base}/api`;
-}
-
-const API_BASE_URL = base;
+// Use VITE_API_BASE from env or fallback to localhost for development
+const API_BASE_URL = import.meta.env.VITE_API_BASE || 'http://localhost:4000/api';
 
 export const generatePlan = async (prompt) => {
   const response = await axios.post(`${API_BASE_URL}/generate-plan`, { prompt });
